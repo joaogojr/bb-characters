@@ -4,7 +4,7 @@ O projeto em questão tem a finalidade de testar alguns conhecimentos do front-e
 
 ## Como executar
 
-Para executar o projeto é bem simples, basta realizar o clone do código em sua máquina, instalar as dependências do Node com o comando npm install e logo após executar o comando npm start para iniciar o programa.
+Para executar o projeto é bem simples, basta realizar o clone do código em sua máquina, instalar as dependências do Node com o comando "npm install" e logo após executar o comando "npm start" para iniciar o programa.
 
 ### Algumas inconsistências.
 
