@@ -1,38 +1,197 @@
-.App {
-  text-align: center;
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 628px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5),
+    0 20px 100px rgba(0, 0, 0, 0.5);
+  transition: 1s;
 }
 
-.App-logo {
-  height: 40vmin;
+.card:hover {
+  transform: translate(-50%, -50%) perspective(2000px);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5),
+    0 20px 100px rgba(0, 0, 0, 0.5);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: 100%;
+  height: 5px;
+  background: #3a3b34;
+  transform-origin: bottom;
+  transform: skewX(-45deg);
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: -5px;
+  width: 5px;
+  height: 100%;
+  background: #3a3b34;
+  transform-origin: left;
+  transform: skewY(-45deg);
+}
+
+.card .imgBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: left;
+  transition: 1s;
+}
+
+.card:hover .imgBox {
+  transform: rotateY(-135deg);
+}
+
+.card .detalhes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* box-sizing: border-box; */
+  padding: 20px;
+  z-index: -1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.imgCapa {
+  /* display: none; */
+  width: 500px;
+  height: 628px;
+}
+
+.imgOldpaper {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 500px;
+  height: 628px;
+  z-index: -5;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.imgPolaroid {
+  width: 200px;
+  margin-right: 5px;
+}
+
+.imgData {
+  position: absolute;
+  width: 148px;
+  height: 143px;
+  top: 63px;
+  left: 44px;
+}
+
+.desc {
+  font-size: 20px;
+}
+
+.info {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.nameBox {
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.nicknameBox {
+  margin-bottom: 20px;
+}
+
+.statusBox {
+  margin-left: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.episodesBox {
+  width: 100%;
+  margin-left: 15px;
+  max-height: 230px;
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 30px; /* demo only */
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.custom-dropdown select {
+  background-color: #98883e;
+  color: #fff;
+  font-size: inherit;
+  padding: 0.5em;
+  padding-right: 2.5em;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: "";
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.custom-dropdown::after {
+  /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: 0.625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -0.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.custom-dropdown::before {
+  /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.custom-dropdown select[disabled] {
+  color: rgba(0, 0, 0, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom-dropdown select[disabled]::after {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown::before {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.custom-dropdown::after {
+  color: rgba(0, 0, 0, 0.4);
 }
