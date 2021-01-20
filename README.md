@@ -10,3 +10,7 @@ Para executar o projeto é bem simples, basta realizar o clone do código em sua
 
 A api possui algumas inconsistências na hora de retornar a requisição. Caso isso aconteça basta recarregar a página.
 Os personagens secundários não estão listados na categoria de episódios e por conta disso apenas os personagens principais possuem a indicação para tal.
+
+### Desenvolvedor.
+
+João Gontijo
